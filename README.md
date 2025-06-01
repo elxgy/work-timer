@@ -17,7 +17,7 @@ Pause/resume functionality
 ### 1. Clone or Download
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/elxgy/work-timer
 cd timer
 ```
 
@@ -107,14 +107,6 @@ Choose an option:
 - `Space` - Pause/resume timer
 - `q` - Quit application
 - `r` - Return to main menu (when session is complete)
-
-### Session Display
-
-During a session, you'll see:
-- Session type (Work/Break)
-- Time remaining (MM:SS format)
-- Progress bar with dark blue gradient
-- Current status and available controls
 
 ### Example Workflow
 

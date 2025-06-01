@@ -18,7 +18,6 @@ const (
 )
 
 type model struct {
-	choice     int
 	session    sessionType
 	progress   progress.Model
 	duration   time.Duration
@@ -55,7 +54,6 @@ func tickCmd() tea.Cmd {
 	})
 }
 
-// clearScreen clears the terminal screen
 func clearScreen() {
 	var cmd *exec.Cmd
 	switch runtime.GOOS {
@@ -116,7 +114,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				return m, tea.Quit
 			case "r", "return":
 				if m.isComplete {
-					clearScreen() // Clear screen when returning to menu
+					clearScreen() 
 					m.showMenu = true
 					m.isRunning = false
 					m.isComplete = false
@@ -140,7 +138,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			if m.elapsed >= m.duration {
 				m.isComplete = true
 				m.isRunning = false
-				clearScreen() // Clear screen when session completes
+				clearScreen() 
 			} else {
 				return m, tickCmd()
 			}

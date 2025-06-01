@@ -13,8 +13,8 @@ import (
 )
 
 const (
-	workDuration  = 30 * time.Minute
-	breakDuration = 10 * time.Minute
+	workDuration  = 30 * time.Second
+	breakDuration = 3 * time.Second
 )
 
 type model struct {
@@ -68,7 +68,7 @@ func clearScreen() {
 
 func initialModel() model {
 	p := progress.New(
-		progress.WithDefaultGradient(),
+		progress.WithScaledGradient("#282b59", "#3c2859"),
 		progress.WithWidth(40),
 	)
 
@@ -114,7 +114,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				return m, tea.Quit
 			case "r", "return":
 				if m.isComplete {
-					clearScreen() 
+					clearScreen()
 					m.showMenu = true
 					m.isRunning = false
 					m.isComplete = false
@@ -138,7 +138,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			if m.elapsed >= m.duration {
 				m.isComplete = true
 				m.isRunning = false
-				clearScreen() 
+				clearScreen()
 			} else {
 				return m, tickCmd()
 			}
@@ -153,24 +153,24 @@ func (m model) View() string {
 
 	// Styles
 	titleStyle := lipgloss.NewStyle().
-		Foreground(lipgloss.Color("205")).
+		Foreground(lipgloss.Color("#8e9ee8")).
 		Bold(true).
 		Padding(1, 2)
 
 	menuStyle := lipgloss.NewStyle().
-		Foreground(lipgloss.Color("86")).
+		Foreground(lipgloss.Color("#317f85")).
 		Padding(0, 2)
 
 	sessionStyle := lipgloss.NewStyle().
-		Foreground(lipgloss.Color("212")).
+		Foreground(lipgloss.Color("#a38ee8")).
 		Bold(true)
 
 	timeStyle := lipgloss.NewStyle().
-		Foreground(lipgloss.Color("39")).
+		Foreground(lipgloss.Color("#6e4fb3")).
 		Bold(true)
 
 	completeStyle := lipgloss.NewStyle().
-		Foreground(lipgloss.Color("46")).
+		Foreground(lipgloss.Color("#6269a8")).
 		Bold(true)
 
 	instructionStyle := lipgloss.NewStyle().

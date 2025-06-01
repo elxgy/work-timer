@@ -13,8 +13,8 @@ import (
 )
 
 const (
-	workDuration  = 30 * time.Second
-	breakDuration = 3 * time.Second
+	workDuration  = 30 * time.Minute
+	breakDuration = 10 * time.Minute
 )
 
 type model struct {

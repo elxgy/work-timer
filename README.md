@@ -3,9 +3,10 @@ Another project to pretend you're productive
 
 ## Features
 
-Work sessions: 30 minutes
-Break sessions: 10 minutes
-Pause/resume functionality
+- Work sessions: 30 minutes
+- Break sessions: 10 minutes
+- Sound feedback at session end
+- Pause/resume functionality
 
 ## Prerequisites
 
@@ -101,6 +102,7 @@ Choose an option:
 #### In Main Menu:
 - `1` or `w` - Start work session
 - `2` or `b` - Start break session
+- `3` or `a` - Auto cycle (work → break → work...)  
 - `q` - Quit application
 
 #### During Timer Session:

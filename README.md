@@ -94,6 +94,7 @@ Timer
 Choose an option:
   1 / w  →  Work session (30 minutes)
   2 / b  →  Break session (10 minutes)
+  3 / a  →  Auto cycle (work → break → work...)
   q      →  Quit
 ```
 
@@ -107,6 +108,7 @@ Choose an option:
 
 #### During Timer Session:
 - `Space` - Pause/resume timer
+- `s` - Skip current session(auto mode only)
 - `q` - Quit application
 - `r` - Return to main menu (when session is complete)
 

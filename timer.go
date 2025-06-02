@@ -73,7 +73,7 @@ type soundCompleteMsg struct{}
 
 func soundCompleteCmd() tea.Cmd {
 	return func() tea.Msg {
-		time.Sleep(2 * time.Second) // Wait for sound to finish
+		time.Sleep(2 * time.Second)
 		return soundCompleteMsg{}
 	}
 }
@@ -142,7 +142,6 @@ func (m *model) togglePause() {
 
 func (m *model) playSessionEndSound() {
 	go func() {
-		// Play system sound with lower volume
 		exec.Command("paplay", "--volume=19661", "/usr/share/sounds/freedesktop/stereo/complete.oga").Run()
 	}()
 }

@@ -244,7 +244,7 @@ func (m model) renderMenu() string {
 		Padding(0, 2)
 
 	var s string
-	s += titleStyle.Render("Pomodoro Timer")
+	s += titleStyle.Render("Work Timer")
 	s += "\n\n"
 	s += menuStyle.Render("Choose an option:")
 	s += "\n"
